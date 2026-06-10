@@ -220,7 +220,7 @@ fabric.properties
 # Azure Toolkit for IntelliJ plugin
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
-
+.vite/
 
 # Project Artifacts
 /pull_request.md
