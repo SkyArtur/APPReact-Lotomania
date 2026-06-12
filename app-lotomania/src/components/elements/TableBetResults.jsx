@@ -13,8 +13,12 @@ export default function TableBetResults({ results }) {
         } else if (hits <= 18) {
             return 'font-bold text-white'
         } else {
-            return 'font-bold text-ambar-500 text-lg'
+            return 'font-bold text-amber-500 text-lg'
         }
+    }
+
+    if (!results?.length) {
+        return null
     }
 
     return (
@@ -22,8 +26,7 @@ export default function TableBetResults({ results }) {
 
             <div className='flex items-center justify-between border-b-2 border-slate-600'>
                 <div className='ps-2'>Tabela de resultados</div>
-                <button id='btnTableResultIcon'
-                        onClick={() => setShow(!show)}
+                <button onClick={() => setShow(!show)}
                         className={'w-10 h-8 rounded outline-slate-600 flex items-center justify-center ' +
                             'cursor-pointer select-none text-sm text-slate-500 font-extralight rounded-md'}>
                     {show ? <FaAngleDoubleUp />  : <FaAngleDoubleDown />}
@@ -35,6 +38,7 @@ export default function TableBetResults({ results }) {
                 <div>Acertos</div>
                 <div>Espelhos</div>
             </div>
+
             <div className={`grid grid-cols-3 gap-0.5 transition-all duration-200 ease-in-out`} key={results[0].contest}>
                 <div className={'font-bold text-orange-400'}>
                     {results[0].contest}
@@ -46,13 +50,14 @@ export default function TableBetResults({ results }) {
                     <Number number={results[0].mirror_hits} />
                 </div>
             </div>
+
             {show && results.slice(1).map((item) => (
                 <div className={'grid grid-cols-3 gap-0.5 transition-all duration-200 ease-in-out'} key={item.contest}>
                     <div className={'font-bold '}>
                         {item.contest}
                     </div>
                     <div className={`${colorHits(item.hits)} flex justify-center items-center`}>
-                        <Number number={item.mirror_hits} />
+                        <Number number={item.hits} />
                     </div>
                     <div className={`${colorHits(item.mirror_hits)} flex justify-center items-center`}>
                         <Number number={item.mirror_hits} />
