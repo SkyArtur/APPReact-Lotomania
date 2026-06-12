@@ -2,7 +2,8 @@
 
 #appLotomania {
   color: var(--color-zinc-50);
-  background-color: var(--color-zinc-900);
+  background-color: #16171d;
+  height: 100vh;
   max-height: 100vh;
   max-width: 100vw;
   overflow: hidden;

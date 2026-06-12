@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import NumberCircle from "./NumberCircle.jsx";
 
 
-export default function TableNumbers({ numbers }) {
+export default function TableBetNumbers({ numbers }) {
 
     const [isOpen, setIsOpen] = useState(false);
 
