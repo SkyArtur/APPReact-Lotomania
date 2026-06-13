@@ -9,7 +9,7 @@ export default function TableBetResults({ results }) {
 
     const colorHits = (hits) => {
         if (hits < 15) {
-            return 'text-zinc-400 text-sm'
+            return 'text-slate-400 text-sm'
         } else if (hits <= 18) {
             return 'font-bold text-white'
         } else {
@@ -28,8 +28,9 @@ export default function TableBetResults({ results }) {
                 <div className='ps-2'>Tabela de resultados</div>
                 <button onClick={() => setShow(!show)}
                         className={'w-10 h-8 rounded outline-slate-600 flex items-center justify-center ' +
-                            'cursor-pointer select-none text-sm text-slate-500 font-extralight rounded-md'}>
-                    {show ? <FaAngleDoubleUp />  : <FaAngleDoubleDown />}
+                            'cursor-pointer select-none text-sm text-slate-500 font-extralight rounded-md ' +
+                            'hover:text-white'}>
+                    {show ? <FaAngleDoubleUp className={'text-white'} />  : <FaAngleDoubleDown />}
                 </button>
             </div>
 
@@ -53,7 +54,7 @@ export default function TableBetResults({ results }) {
 
             {show && results.slice(1).map((item) => (
                 <div className={'grid grid-cols-3 gap-0.5 transition-all duration-200 ease-in-out'} key={item.contest}>
-                    <div className={'font-bold '}>
+                    <div className={'text-slate-400 font-light'}>
                         {item.contest}
                     </div>
                     <div className={`${colorHits(item.hits)} flex justify-center items-center`}>
