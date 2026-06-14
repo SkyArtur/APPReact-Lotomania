@@ -15,8 +15,9 @@ export default function TableBetNumbers({ numbers }) {
                 <button type='button'
                         onClick={() => setIsOpen(!isOpen)}
                         className={'w-10 h-8 rounded outline-slate-600 flex items-center justify-center ' +
-                            'cursor-pointer select-none text-sm text-slate-500 font-extralight rounded-md'}>
-                    {isOpen ? <FaEye /> : <FaEyeSlash />}
+                            'cursor-pointer select-none text-sm text-slate-500 font-extralight rounded-md ' +
+                            'hover:text-white'}>
+                    {isOpen ? <FaEye className={'text-white'} /> : <FaEyeSlash />}
                 </button>
             </div>
             { isOpen && (

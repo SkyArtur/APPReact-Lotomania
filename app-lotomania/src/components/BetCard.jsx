@@ -1,9 +1,10 @@
 import TableBetNumbers from "./elements/TableBetNumbers.jsx";
 import TableBetResults from "./elements/TableBetResults.jsx";
+import FormBet from "./FormBet.jsx";
 
 
 
-export default function BetCard({ bet }) {
+export default function BetCard({ bet, numbers }) {
 
     const date = new Date(bet.date);
 
@@ -24,6 +25,7 @@ export default function BetCard({ bet }) {
             </div>
             <TableBetResults results={bet.results} />
             <TableBetNumbers numbers={bet.numbers} />
+            <FormBet numbers={numbers}  />
         </div>
     )
 }
